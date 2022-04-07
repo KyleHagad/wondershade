@@ -15,9 +15,21 @@
   </header>
 
   <nav class="item-tabs-ctrls tabs" data-group="itemTabs">
-    <a class="tab-btn" data-tab="description">Description</a>
-    <a class="tab-btn" data-tab="details">Details</a>
-    <a class="tab-btn" data-tab="effects">Effects</a>
+    <a class="tab-btn" data-tab="description">
+      <div class="flex-row align-center">
+        <p class="doubleLabel"> {{ localize 'WonderSystem.Description'}} </p>
+      </div>
+    </a>
+    <a class="tab-btn" data-tab="details">
+      <div class="flex-row align-center">
+        <p class="doubleLabel"> {{ localize 'WonderSystem.Details'}} </p>
+      </div>
+    </a>
+    <a class="tab-btn" data-tab="effects">
+      <div class="flex-row align-center">
+        <p class="doubleLabel"> {{ localize 'WonderSystem.Effects'}} </p>
+      </div>
+    </a>
   </nav>
 
   <section class="item-tabs">
@@ -30,7 +42,7 @@
           <div class="flex-row">
             <p>Quantity</p>
             <div class="item-description">
-              <input type="number" name="data.quantity" value="{{itemData.quantity}}" >
+              <input type="number" name="data.quantity" value="{{itemData.quantity}}">
             </div>
           </div>
         </label>
@@ -39,7 +51,16 @@
           <div class="flex-row">
             <p>Weight</p>
             <div class="item-description">
-              <input type="number" name="data.weight" value="{{itemData.weight}}" >
+              <input type="number" name="data.weight" value="{{itemData.weight}}">
+            </div>
+          </div>
+        </label>
+
+        <label for="data.price">
+          <div class="flex-row">
+            <p>Price</p>
+            <div class="item-description">
+              <input type="number" name="data.price" value="{{itemData.price}}">
             </div>
           </div>
         </label>
@@ -49,10 +70,6 @@
       <div class="flex-section">
         <label for="data.description.value">
 
-          <div class="flex-row align-center">
-            <p class="doubleLabel"> {{ localize 'WonderSystem.Description'}} </p>
-          </div>
-
           <div class="item-description">
             <textarea name="data.description.value" placeholder="Description">{{itemData.description.value}}</textarea>
           </div>
@@ -61,7 +78,50 @@
       </div>
     </div>
 
-    <div class="tab" data-group="itemTabs" data-tab="details"> Details </div>
+    <div class="tab" data-group="itemTabs" data-tab="details">
+      <div class="flex-section">
+
+        <label for="data.weight">
+          <div class="flex-row">
+            <p>Weight</p>
+            <div class="item-description">
+              <input type="number" name="data.weight" value="{{itemData.weight}}">
+            </div>
+          </div>
+        </label>
+
+        <label for="data.price">
+          <div class="flex-row">
+            <p>Price</p>
+            <div class="item-description">
+              <input type="number" name="data.price" value="{{itemData.price}}">
+            </div>
+          </div>
+        </label>
+
+        <label for="data.attunement">
+          <div class="flex-row">
+            <p>Attunement</p>
+            <div class="item-description">
+              <input type="number" name="data.attunement" value="{{itemData.attunement}}">
+            </div>
+          </div>
+        </label>
+
+        <label for="data.rarity">
+          <div class="flex-row">
+            <p>Rarity</p>
+            <select
+              name="data.rarity"
+              class="dark-drop"
+              value="{{itemData.rarity}}"
+            > {{selectOptions config.html.rarity selected=itemData.rarity nameAttr="value" labelAttr="text"}}
+            </select>
+          </div>
+        </label>
+
+      </div>
+    </div>
 
     <div class="tab" data-group="itemTabs" data-tab="effects"> Effects </div>
   </section>

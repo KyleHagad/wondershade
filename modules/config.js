@@ -86,5 +86,12 @@ export const WonderSystemConf = {
         { name: 'Vibe Check', keyVal: 'vibeCheck' },
       ].sort(dynamicSort('name')),
     },
+    rarity: [
+      { value: 0, text: 'Common' },
+      { value: 1, text: 'Uncommon' },
+      { value: 2, text: 'Rare' },
+      { value: 3, text: 'Very Rare' },
+      { value: 4, text: 'Legendary' },
+    ]
   },
 };
